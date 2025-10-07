@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Flexbox Properties Demo</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      color: #333;
+    }
+    h2 {
+      margin-top: 40px;
+      border-top: 2px solid #eee;
+      padding-top: 20px;
+    }
+    /* Base styles for all flex containers */
+    .flex-container {
+      /* 1. Display the container as a flexbox */
+      display: flex; 
+      
+      background-color: rgb(2, 28, 54);
+      padding: 10px;
+      margin: 10px auto;
+      min-height: 200px;
+    }
+
+    /* Base styles for all flex items */
+    .flex-item {
+      background-color: #e8d6d6;
+      width: 80px;
+      text-align: center;
+      line-height: 50px;
+      font-size: 24px;
+    }
+
+    /* --- 2. Direction (flex-direction) --- */
+    .direction-row { flex-direction: row; }
+    .direction-column { 
+      flex-direction: column; 
+      height: 300px; /* Give column layout more height */
+    }
+
+    /* --- 3. Horizontal Alignment (justify-content) --- */
+    .justify-start { justify-content: flex-start; }
+    .justify-center { justify-content: center; }
+    .justify-space-between { justify-content: space-between; }
+    .justify-space-around { justify-content: space-around; }
+
+    /* --- 4. Vertical Alignment (align-items) --- */
+    .align-start { align-items: flex-start; }
+    .align-center { align-items: center; }
+    .align-end { align-items: flex-end; }
+    
+    /* --- 5. Spacing (gap) --- */
+    .with-gap {
+      gap: 20px;
+      justify-content: flex-start; /* Align left to show gap clearly */
+    }
+ </style>
+</head>
+<body>
+  <h1>Flexbox Properties </h1>
+
+  <!-- flex-direction examples -->
+  <h2>Direction (flex-direction)</h2>
+  <div class="flex-container direction-row justify-center align-center">
+    <div class="flex-item">A</div><div class="flex-item">B</div><div class="flex-item">C</div>
+  </div>
+  <div class="flex-container direction-column justify-center align-center">
+    <div class="flex-item">A</div><div class="flex-item">B</div><div class="flex-item">C</div>
+  </div>
+
+  <!-- justify-content examples -->
+  <h2>Horizontal Alignment (justify-content)</h2>
+  <div class="flex-container justify-start"><div class="flex-item">1</div><div class="flex-item">2</div><div class="flex-item">3</div></div>
+  <div class="flex-container justify-center"><div class="flex-item">1</div><div class="flex-item">2</div><div class="flex-item">3</div></div>
+  <div class="flex-container justify-space-between"><div class="flex-item">1</div><div class="flex-item">2</div><div class="flex-item">3</div></div>
+  <div class="flex-container justify-space-around"><div class="flex-item">1</div><div class="flex-item">2</div><div class="flex-item">3</div></div>
+
+  <!-- align-items examples -->
+  <h2>Vertical Alignment (align-items)</h2>
+  <div class="flex-container align-start"><div class="flex-item">1</div><div class="flex-item" style="line-height: 100px;">2</div><div class="flex-item">3</div></div>
+  <div class="flex-container align-center"><div class="flex-item">1</div><div class="flex-item" style="line-height: 100px;">2</div><div class="flex-item">3</div></div>
+  <div class="flex-container align-end"><div class="flex-item">1</div><div class="flex-item" style="line-height: 100px;">2</div><div class="flex-item">3</div></div>
+
+  <!-- gap example -->
+  <h2>Spacing Between Items (gap)</h2>
+  <div class="flex-container with-gap">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>  
+  </div>
+</body>
+</html>
